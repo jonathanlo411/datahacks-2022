@@ -60,15 +60,28 @@
         <div id="process">
             <div class="step" id="sec0">
                 <h3 class="heading">0. Introduction</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non asperiores delectus, pariatur repellat ad odit, nemo nisi vero quos obcaecati eum eveniet laborum corrupti cum libero voluptatum facere dolores sint? Illum quas sint incidunt recusandae beatae non dignissimos reprehenderit ipsam amet cupiditate blanditiis exercitationem provident explicabo maiores, ab animi voluptatibus facilis perspiciatis quos culpa laborum magni magnam. In tempore culpa quo, explicabo commodi ex tempora a nesciunt, molestias sed saepe animi excepturi veniam quam, est illum similique enim laboriosam deserunt eius omnis sunt id incidunt. Autem deserunt expedita, reiciendis repudiandae alias molestiae aperiam cum corporis aliquam accusamus, a ea?</p>
+                <p>In this project, we use a dataset consisting of financial statements and sentiments to make predictions about sentiment. We dove into the data and analyzed any potential trends. After our exploratory data analysis (EDA), we decided a {} neural network would be the best option for predictions. After testing parameters we made the decision to proceed with a {} based architecture.</p>
             </div>
             <div class="step" id="sec1">
                 <h3 class="heading">1. Data Cleaning/Preprocessing</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
+                <p>
+                    The data consists of two columns. One composed of sentences and the other composed of the sentence’s sentiment. The sentence topics were focused around finance and the stock market. The data originates from a Kaggle dataset which originates from a study about good and bad debt. On initial data load, we noticed that some of the strings were already being processed very differently. We then realized that this was due to an issue with Pandas utilizing mathjax to preprocess data and fixed the issue.
+                    <br><br>
+                    We initially thought of taking a surface level approach and to try to uncover as many details as we could about sentences and sentence structure. However, Natural Language Processing is a very difficult process so we concluded that this approach would most likely end fruitless. We then decided that using pre-established methods were better and began analyzing word significance and distribution of sentiments. 
+                    <br><br>
+                    We then proceeded to tokenize the sentences which gave context to the sentences. This would allow the model to understand sentences in a better way due to the broken down nature. During this process, we needed to strip punctuation and remove capitalization. This would ensure that words with the same meanings would be tokenized similarly. In an extreme example:</p>
+                    <pre><code>
+>>> s1 = “That ain’t half bad.”
+>>> s2 = “Bad halves make a good whole.”
+>>> compare_structure(s1, s2)
+False
+                    </code></pre><p>
+                    The above example is not entirely accurate but provides a general understanding of the potential issues of improper formats in tokenization. For more information, checkout DSC96, DSC80, or LIGN167!
+                    </p>
             </div>
             <div class="step" id="sec2">
                 <h3 class="heading">2. Visualizations</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea.</p>
+                <p>As seen from the distribution of sentiment, neutrality is very persistent through the training data. This might cause our model to produce predictions that are skewed to neutrality rather than positive or negative.</p>
                 <pre><code>
 # Loading Data
 train_data = pd.read_csv('advanced_trainset.csv')
@@ -81,19 +94,52 @@ fig = px.pie(sentiment_counts, values='Sentiment', names='index', title="Sentime
 fig.show()
                 </code></pre>
                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://chart-studio.plotly.com/~jonathanlo411/1/#/" height="525" width="100%"></iframe>
-                <p>Pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
+                <p>In the sentence below, our model identifies the word “Finnish” as a National or Religious Political Group (NORP), as it is used to describe a group of people who identify as Finnish. Along with this the model also identifies the countries of “Russia” and “Finland” as GPE, or geological locations.</p>
+                <pre><code>
+html = displacy.render(doc, style="ent", page=True)
+displacy.render(doc, style="ent")
+                </code></pre>
+                <div class="img-ps">
+                    <img src="data/word-play.png">
+                </div>
+                <p>The model below shows the connection held between certain words found in the data. Words such as “Finnish-” and “Russian” are connected since they are both adjectives used to describe some noun that follows. Our model is similar to information priming as these words “prime” the mind/model to have an expectation of what words/phrases could follow.</p>
+                <pre><code>
+sent = train_data.loc[0]['Sentence']
+doc=nlp(sent)
+html = displacy.render(doc, style="dep", page=True)
+                </code></pre>
+                <div class="img-ps">
+                    <img src="data/word.png">
+                </div>
             </div>
             <div class="step" id="sec3">
                 <h3 class="heading">3. Analysis/Results</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla, eaque commodi, exercitationem dolores deserunt laudantium laborum officia voluptatem at possimus animi a unde aspernatur quasi? Earum veniam unde eveniet suscipit voluptate error maxime aut, minus sed fugiat dignissimos distinctio soluta quae. Totam, animi qui! Atque neque quae eligendi optio ratione nulla tempore, earum quibusdam voluptatem eius obcaecati sapiente eaque.</p>
+                <p>After our visualizations and processed/tokenized data, we proceed with a recurrent neural network for NLP. Recurrent neural networks are advantageous because they retain a sort of memory which fits our prediction usage best.
+                    <br><br>
+                    Next, we had to decide between Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU).  LSTM is older than GRU so the technology is not as “advanced”. LSTM provides a more robust way to carry out the weighting process in a neural network. On the other hand GRU is younger and is being increasingly used. GRU is simpler than LSTM and as such, is faster on training and fitting the data. Performance is roughly on par with LSTM but some sources say otherwise. We decided to proceed with the {} architecture because we thought the {} best fit the needs in this situation.</p>
+                    
+                <div class="img-ws">
+                    <img src="data/gru-d.jpg">
+                </div><p>
+                    Key parameters we tuned were dropout rate and activation functions. Dropout rate is the fraction of the units to drop for the linear transformation of the inputs. We utilize this along with the vectorized (and tokenized) sentence data to aim for the best prediction accuracy. We also cycled through different activation functions. We thought that ReLU and TanH functions were the best for sentimental analysis predictors.
+                    </p>
+                <div class="img-w">
+                    <img src="data/gru.png">
+                </div>
             </div>
             <div class="step" id="sec4">
                 <h3 class="heading">4. Conclusion</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
+                <p>During this Datahacks 2022, we learned a lot about Deep Learning in NLP. In the beginning, we first pruned out all of the poorly written sentences in order for the model to be able to process without there being issues with certain characters. We then moved on to create visualizations to get a better understanding of the relationships in the data and move forward accordingly. We then focused on building and training the model using the newly cleaned data set, where the model would first vectorize the words in a sentence using word embedding, and then used the information gathered to train. Our model was able to predict sentiments with high accuracy after feeding in the sentences. 
+<br><br>
+                    We already knew that working with teammates is more efficient and faster than working alone. However, during this hackathon, we learned that truly good teammates will push others and thus, themselves far above expectations. We completed a lot more than we expected considering experience level and we are truly satisfied with DataHacks 2022.
+                    </p>
             </div>
             <div class="step" id="sec5">
                 <h3 class="heading">5. Future Improvements</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
+                <p>In our current model, we fell short on time when it came down to testing different neural network architectures and had to simply resort to using the model that produced the best results and took the least amount of time to run. 
+
+                    In the future, we hope that we can further fine tune our model to more accurately predict the future market based on the sentiment today. Given that we were limited on time and on processing power, we hope that given the opportunity of being able to use a more powerful system, we could use the headroom to further expand our data set to capture a more accurate representation of the sentiment surrounding the economic landscape and market. 
+                    </p>
             </div>
         </div>   
 

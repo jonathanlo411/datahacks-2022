@@ -271,3 +271,58 @@ footer h6 {
 .sidebar .sidebar-content:hover h2 {
     display: block;
 }
+
+
+.img-w {
+    width: 50%;
+    margin-top: 15%;
+    margin: 2vh auto;
+    text-align: center;
+}
+
+.img-w img {
+    display: block;
+    max-width: 70vw;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.img-ps {
+    max-width: 50vw;
+    margin-top: 15%;
+    margin: 2vh 0 5vh;
+    text-align: center;
+}
+
+.img-ps img {
+    display: block;
+    max-width: 70vw;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.img-ws {
+    width: 60%;
+    margin-top: 15%;
+    margin: 2vh auto;
+    text-align: center;
+}
+
+.img-ws img {
+    display: block;
+    max-width: 70vw;
+    max-height: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
