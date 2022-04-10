@@ -26,6 +26,13 @@
     text-align: center;
 }
 
+#team #team-desc {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
 #team #member-list {
     display: flex;
     flex-direction: row;
@@ -88,4 +95,24 @@
 
 .heading {
     font-size: 40px;
+}
+
+
+/* Footer */
+footer {
+    background-color: black;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    color: white;
+    margin: auto;
+    padding: 20px 10px;
+}
+
+footer h6 {
+    padding-left: 50px;
+}
+
+#footer-spacer {
+    height: 15px;
 }
