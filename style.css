@@ -81,7 +81,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .member-down-animate {
-    animation: memberDown 0.7s linear;
+    animation: memberDown 0.6s linear;
     animation-delay: calc(var(--animation-order) * 100ms - 100ms);
     animation-fill-mode: forwards;
 }
@@ -193,3 +193,62 @@ footer h6 {
     height: 15px;
 }
 
+
+/* Side Nav */
+.sidebar {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    top: 20vh;
+    transform: translateX(-350%);
+    width: 50%;
+    text-align: left;
+}
+
+.animate-sidebar-pop {
+    animation: sidebarPop;
+    animation-duration: 0.75s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sidebarPop {
+    0% {transform: translateX(-350%)}
+    100% {transform: translateX(0%)}    
+}
+
+.sidebar .sidebar-content {    
+    margin: 1vh 0 0 2vw;
+    padding: 2%;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    transition: 0.3s;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border: 3px solid white;
+    align-self: flex-start;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-content:hover {
+    background-color: rgb(228, 228, 228);
+    cursor: pointer;
+}
+
+.sidebar .sidebar-content h2 {
+    display: none;
+    font-size: 19px;
+    font-weight: 600;
+    color: black;
+    margin-left: 1vh;
+    transition: 0.3s;
+}
+
+.sidebar .sidebar-content:hover h2 {
+    display: block;
+}

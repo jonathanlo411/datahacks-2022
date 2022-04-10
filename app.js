@@ -1,8 +1,8 @@
 
 // Card Animates when in viewport (via IntersectionObserver API)
-const targets = document.getElementsByClassName('member')
+const cards = document.getElementsByClassName('member')
 
-const lazyLoad = target => {
+const animateCard = target => {
   const io = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
 
@@ -18,12 +18,42 @@ const lazyLoad = target => {
 
   io.observe(target)
 };
-
-for (let i = 0; i < targets.length; i++) {
-    lazyLoad(targets[i])
+for (let i = 0; i < cards.length; i++) {
+    animateCard(cards[i])
 }
 
 
+// Side Nav Animate
+const nav = document.getElementById("side-nav")
+const process = document.getElementById("process")
+const animateNav = target => {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        nav.classList.add('animate-sidebar-pop');
+      }
+      else {
+        nav.classList.remove('animate-sidebar-pop');
+        nav.classList.add('.animate-sidebar-pop-reverse')
+      }
+
+    });
+  });
+  io.observe(target)
+};
+animateNav(process)
+
+
+// Side Nav Scroll Navigation
+const buttons = document.getElementsByClassName("sidebar-content");
+for (let i = 0; i < buttons.length; i++) {
+    bt = buttons[i]
+    bt.addEventListener("click", () => {
+        it = document.getElementById(`sec${i}`)
+        it.scrollIntoView({behavior: "smooth"});
+    })
+}
 
 
 

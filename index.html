@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script defer src="app.js"></script>
     <title>Bofa Bros - DataHacks 2022</title>
 </head>
@@ -14,6 +18,7 @@
     <div id="body-page">
     <div id="center">
 
+        <!-- Team Section -->
         <div id="team">
             <h2 id="team-title">Team Bofa Bros</h2>
             <p id="team-desc">
@@ -46,18 +51,18 @@
             </div>
         </div>
         
-
+        <!-- Process Section -->
         <div id="process">
             <h2 id="process-title">Process</h2>
-            <div class="step">
+            <div class="step" id="sec0">
                 <h3 class="heading">0. Introduction</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem non asperiores delectus, pariatur repellat ad odit, nemo nisi vero quos obcaecati eum eveniet laborum corrupti cum libero voluptatum facere dolores sint? Illum quas sint incidunt recusandae beatae non dignissimos reprehenderit ipsam amet cupiditate blanditiis exercitationem provident explicabo maiores, ab animi voluptatibus facilis perspiciatis quos culpa laborum magni magnam. In tempore culpa quo, explicabo commodi ex tempora a nesciunt, molestias sed saepe animi excepturi veniam quam, est illum similique enim laboriosam deserunt eius omnis sunt id incidunt. Autem deserunt expedita, reiciendis repudiandae alias molestiae aperiam cum corporis aliquam accusamus, a ea?</p>
             </div>
-            <div class="step">
+            <div class="step" id="sec1">
                 <h3 class="heading">1. Data Cleaning/Preprocessing</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
-            <div class="step">
+            <div class="step" id="sec2">
                 <h3 class="heading">2. Visualizations</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea.</p>
                 <pre><code>
@@ -87,15 +92,15 @@ ax.get_legend().set_title("Users")
                 </code></pre>
                 <p>Pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
-            <div class="step">
+            <div class="step" id="sec3">
                 <h3 class="heading">3. Analysis/Results</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
-            <div class="step">
+            <div class="step" id="sec4">
                 <h3 class="heading">4. Conclusion</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
-            <div class="step">
+            <div class="step" id="sec5">
                 <h3 class="heading">5. Future Improvements</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
@@ -107,5 +112,34 @@ ax.get_legend().set_title("Users")
         <h5>2022 Bofa Bros, Inc.</h5>
     </footer>
     </div>
+
+    <!-- Side Nav -->
+    <div class="sidebar" id="side-nav">
+        <div class="sidebar-content" id="int">
+            <i class="material-icons">info</i>
+            <h2>Introduction</h2>
+        </div>
+        <div class="sidebar-content" id="dat">
+            <i class="material-icons">cleaning_services</i>
+            <h2>Data Cleaning/Preprocessing</h2>
+        </div>
+        <div class="sidebar-content" id="vis">
+            <i class="material-icons">assessment</i>
+            <h2>Visualizations</h2>
+        </div>
+        <div class="sidebar-content" id="ana">
+            <i class="material-icons">query_stats</i>
+            <h2>Analysis/Results</h2>
+        </div>
+        <div class="sidebar-content" id="con">
+            <i class="material-icons">sports_score</i>
+            <h2>Conclusion</h2>
+        </div>
+        <div class="sidebar-content" id="fut">
+            <i class="material-icons">update</i>
+            <h2>Future Improvements</h2>
+        </div>
+    </div>
+
 </body>
 </html>
