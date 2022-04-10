@@ -18,8 +18,7 @@
             <p id="team-desc">
                 Returning for a second year after their honorable mention from Datahacks 2021, Team Wild Rifters, now renamed to Team Bofa Bros, composed of Jonathan Lo, Eric Wang, and Justin Liang, hope to build upon their previous experiences to showcase a development of knowledge in this year’s Datahacks 2022 Advanced Path. With a newfound appreciation for the ability of data to help change the understanding of the world around us, Team Bofa Bros hopes to use this hackathon as the backbone to create something much greater.<br><br>
                 We are vengeance. <br><br>
-                We’re back to destroy the enemy nexus this time.
-                
+                We're back to destroy the enemy nexus this time.
             </p>
             <div id="member-list">
                 <div class="member" onclick="location.href = 'https://www.linkedin.com/in/jonathanlo411/'">
@@ -59,11 +58,33 @@
             </div>
             <div class="step">
                 <h3 class="heading">2. Visualizations</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
-            </div>
-            <div class="step">
-                <h3 class="heading">3. Analysis/Results</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea.</p>
+                <pre><code>
+# Sample Code Block
+scheme_one = mc.FisherJenks(merged['num_users'], k=7)
+
+ax = gplt.choropleth(
+    merged,
+    hue='num_users',
+    scheme=scheme_one,
+    cmap='Blues',
+    legend=True,
+    figsize=(18,14)
+)
+gplt.pointplot(
+    merged_centroids,
+    ax=ax,
+    scale='num_ASes',
+    color='red',
+    legend=True,
+    limits=(3, 30),
+    legend_values=[400, 200, 100, 50, 25, 10],
+    legend_labels=['≤ 400 ASes', '≤ 200 ASes', '≤ 100 ASes', '≤ 50 ASes', '≤ 25 ASes', '≤ 10 ASes']
+)
+plt.title("ASes and Users by Country")
+ax.get_legend().set_title("Users")
+                </code></pre>
+                <p>Pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
             <div class="step">
                 <h3 class="heading">3. Analysis/Results</h3>

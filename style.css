@@ -7,6 +7,16 @@
     font-family: "Poppins";
 }
 
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    background-color: #303030;
+    border-radius: 10px;
+}
+
 #center {
     width: 70%;
     margin: auto;
@@ -97,6 +107,31 @@
     font-size: 40px;
 }
 
+pre code {
+    display: block;
+    white-space: pre;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    min-width: 100px;
+    padding: 0% 2.5%;
+    background: #303030;
+    word-wrap: break-word;
+    box-decoration-break: clone;
+    border-radius: 10px;
+    color: white;
+    margin: 1.15% 0;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+pre code::-webkit-scrollbar {
+    width: 10px;
+}
+pre code::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.683);
+    border-radius: 10px;
+}
+  
 
 /* Footer */
 footer {
@@ -116,3 +151,4 @@ footer h6 {
 #footer-spacer {
     height: 15px;
 }
+
