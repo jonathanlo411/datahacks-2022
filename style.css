@@ -8,7 +8,7 @@
 }
 
 body {
-    background-image: url("https://src.n-ix.com/uploads/2022/02/21/dce6416d-0d7c-44ca-a58e-0b7b505b95e9.jpg");
+    background-image: url("data/bg2.jpg");
     background-repeat: no-repeat;
 }
 
@@ -222,7 +222,7 @@ footer h6 {
     position: fixed;
     top: 20vh;
     transform: translateX(-350%);
-    width: 50%;
+    width: 40%;
     text-align: left;
 }
 
