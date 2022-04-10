@@ -9,6 +9,7 @@
 
 body {
     background-image: url("https://src.n-ix.com/uploads/2022/02/21/dce6416d-0d7c-44ca-a58e-0b7b505b95e9.jpg");
+    background-repeat: no-repeat;
 }
 
 body::-webkit-scrollbar {
@@ -22,7 +23,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 #body-page {
-    background-color: white;
     animation: pageUp 0.9s;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;  
@@ -45,10 +45,28 @@ body::-webkit-scrollbar-thumb {
     color: rgb(239, 236, 255);
 }
 
+.svg-wrapper{
+    display:block;
+    position: relative;
+    width: 100%;
+    height: 80px;
+    background: rgba(0,0,0,0.1)
+}
+
+.svg-wrapper svg{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height: 100%;
+}
+
+#back-white {
+    background-color: white;
+}
 
 /* Team Styling */
 #team #team-title {
-    margin-top: 10%;
     font-size: 70px;
     text-align: center;
     padding-top: 2.5%;
@@ -191,6 +209,7 @@ footer h6 {
 
 #footer-spacer {
     height: 15px;
+    background-color: white;
 }
 
 
