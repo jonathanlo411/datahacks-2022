@@ -7,6 +7,10 @@
     font-family: "Poppins";
 }
 
+body {
+    background-image: url("https://src.n-ix.com/uploads/2022/02/21/dce6416d-0d7c-44ca-a58e-0b7b505b95e9.jpg");
+}
+
 body::-webkit-scrollbar {
     width: 10px;
 }
@@ -17,23 +21,37 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
 }
 
+#body-page {
+    background-color: white;
+    animation: pageUp 0.9s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;  
+}
+
+@keyframes pageUp {
+    0% {transform: translateY(75%)}
+    100% {transform: translateY(0%)}  
+}
+
 #center {
     width: 70%;
     margin: auto;
 }
 
 #title {
-    margin-top: 7.5vh;
-    font-size: 70px;
+    margin-top: 10vh;
+    font-size: 100px;
     text-align: center;
+    color: rgb(239, 236, 255);
 }
 
 
 /* Team Styling */
 #team #team-title {
-    margin-top: 5%;
-    font-size: 55px;
+    margin-top: 10%;
+    font-size: 70px;
     text-align: center;
+    padding-top: 2.5%;
 }
 
 #team #team-desc {
@@ -58,11 +76,33 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     transition: 0.25s;
     margin: 0 2%;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.member-down-animate {
+    animation: memberDown 0.7s linear;
+    animation-delay: calc(var(--animation-order) * 100ms - 100ms);
+    animation-fill-mode: forwards;
 }
 
 #team .member:hover {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.445) 0px 10px 18px;
+}
+
+@keyframes memberDown {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    25% {        
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+    }  
 }
 
 #team .pfp-wrapper {
@@ -95,7 +135,7 @@ body::-webkit-scrollbar-thumb {
 /* Process Styling */
 #process-title {
     margin-top: 5%;
-    font-size: 55px;
+    font-size: 70px;
     text-align: center;
 }
 
@@ -127,6 +167,7 @@ pre code {
 pre code::-webkit-scrollbar {
     width: 10px;
 }
+
 pre code::-webkit-scrollbar-thumb {
     background-color: rgba(255, 255, 255, 0.683);
     border-radius: 10px;

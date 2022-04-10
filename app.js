@@ -1,3 +1,34 @@
+
+// Card Animates when in viewport (via IntersectionObserver API)
+const targets = document.getElementsByClassName('member')
+
+const lazyLoad = target => {
+  const io = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        const img = entry.target;
+
+        img.classList.add('member-down-animate');
+
+        observer.disconnect();
+      }
+    });
+  });
+
+  io.observe(target)
+};
+
+for (let i = 0; i < targets.length; i++) {
+    lazyLoad(targets[i])
+}
+
+
+
+
+
+
+
 function LoadChart(labels, label, data, canvas, title) {
     var chartData = {
         labels: labels,
