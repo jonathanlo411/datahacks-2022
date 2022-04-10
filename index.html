@@ -69,38 +69,23 @@
             <div class="step" id="sec2">
                 <h3 class="heading">2. Visualizations</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea.</p>
+                <pre><code>
+# Loading Data
+train_data = pd.read_csv('advanced_trainset.csv')
+
+# Obtaining frequency/counts of each sentiment 
+sentiment_counts = train_data['Sentiment'].value_counts().to_frame().reset_index()
+
+# Plotting
+fig = px.pie(sentiment_counts, values='Sentiment', names='index', title="Sentiment Distribution")
+fig.show()
+                </code></pre>
                 <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="https://chart-studio.plotly.com/~jonathanlo411/1/#/" height="525" width="100%"></iframe>
                 <p>Pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
             </div>
             <div class="step" id="sec3">
                 <h3 class="heading">3. Analysis/Results</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque!</p>
-                <pre><code>
-# Sample Code Block
-scheme_one = mc.FisherJenks(merged['num_users'], k=7)
-
-ax = gplt.choropleth(
-    merged,
-    hue='num_users',
-    scheme=scheme_one,
-    cmap='Blues',
-    legend=True,
-    figsize=(18,14)
-)
-gplt.pointplot(
-    merged_centroids,
-    ax=ax,
-    scale='num_ASes',
-    color='red',
-    legend=True,
-    limits=(3, 30),
-    legend_values=[400, 200, 100, 50, 25, 10],
-    legend_labels=['≤ 400 ASes', '≤ 200 ASes', '≤ 100 ASes', '≤ 50 ASes', '≤ 25 ASes', '≤ 10 ASes']
-)
-plt.title("ASes and Users by Country")
-ax.get_legend().set_title("Users")
-                </code></pre>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla, eaque commodi, exercitationem dolores deserunt laudantium laborum officia voluptatem at possimus animi a unde aspernatur quasi? Earum veniam unde eveniet suscipit voluptate error maxime aut, minus sed fugiat dignissimos distinctio soluta quae. Totam, animi qui! Atque neque quae eligendi optio ratione nulla tempore, earum quibusdam voluptatem eius obcaecati sapiente eaque.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure, eius. Minima voluptatum optio rem. Dignissimos commodi omnis nam dicta nemo consequuntur eos hic sint possimus, ratione quaerat ducimus autem ipsa quam mollitia quas quod porro aspernatur dolores unde explicabo. Aperiam omnis eos praesentium ea pariatur porro quis maxime perferendis minima quos iste quidem tempora inventore mollitia, illo quaerat nemo doloremque at nobis alias saepe non recusandae voluptatum? Incidunt aut minima labore aspernatur blanditiis, sapiente a molestias amet, odit beatae fuga maiores reiciendis velit aliquam fugiat laborum eaque cupiditate est. Ea a, nemo at laborum magnam debitis quaerat ipsam minima eaque! Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt nulla, eaque commodi, exercitationem dolores deserunt laudantium laborum officia voluptatem at possimus animi a unde aspernatur quasi? Earum veniam unde eveniet suscipit voluptate error maxime aut, minus sed fugiat dignissimos distinctio soluta quae. Totam, animi qui! Atque neque quae eligendi optio ratione nulla tempore, earum quibusdam voluptatem eius obcaecati sapiente eaque.</p>
             </div>
             <div class="step" id="sec4">
                 <h3 class="heading">4. Conclusion</h3>
