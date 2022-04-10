@@ -56,9 +56,7 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 
-
-
-
+// Load graphs through Chart.js
 function LoadChart(labels, label, data, canvas, title) {
     var chartData = {
         labels: labels,
